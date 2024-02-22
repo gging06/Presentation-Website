@@ -1,0 +1,233 @@
+* {
+    background-color: black;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    padding: 0;
+}
+
+body {
+    overflow: hidden;
+}
+
+/* Typography / Colors (examples: titles, paragraphs, links, etc.)
+========================================================================== */
+:root {
+    --text-color1: rgb(206, 206, 206);
+}
+
+header h1 {
+    font-size: 5rem;
+    margin-bottom: 0;
+    letter-spacing: 2rem;
+    margin-right: -2rem;
+}
+
+figcaption {
+    color: var(--text-color1);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
+.astronaut-suit,
+.astronaut,
+.astronaut-choice {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.particles-js {
+	background: black;
+	height: 100vh;
+}
+
+/* Images
+========================================================================== */
+.astronaut-suit figure img {
+    width: 10rem;
+}
+
+.astronaut img {
+    width: 8rem;
+    position: absolute;
+    top: 42%;
+}
+
+.astronaut-choice img {
+    width: 8rem;
+    position: absolute;
+}
+
+footer ul li img {
+    width: 2rem;
+    margin: 0 1rem;
+}
+
+.planet-earth img {
+    top: 5%;
+    left: 3%;
+}
+
+.planet-earth img:hover
+
+.planet img {
+    transition: width 0.5s ease;
+    width: 18rem;
+    position: absolute;
+}
+
+.planet:hover img {
+    width: 20rem;
+    cursor: pointer;
+    animation: astronaut-spin infinite;
+}
+
+/* General components (examples: sections, cards, tables, etc.)
+========================================================================== */
+header {
+    color: var(--text-color1);
+    font-family: 'Courier New', Courier, monospace;
+    text-transform: uppercase;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0;
+}
+
+header ul {
+    list-style: none;
+    margin-top: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-bottom: 2rem;
+}
+
+header li:not(:first-child)::before {
+    content: " - ";
+}
+
+header li:not(:last-child)::after {
+    content: "\00a0";
+}
+
+footer ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+}
+
+footer ul li {
+    margin: 0 1rem;
+    display: flex;
+    align-items: flex-end;
+}
+
+
+/* Forms
+========================================================================== */
+
+/* Specific page rules
+========================================================================== */
+
+/* Amimations
+========================================================================== */
+.astronaut-suit figure img {
+    transform: translateY(0rem);
+    animation: astronaut-suit 6s ease-in-out infinite;
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@keyframes astronaut-suit {
+    0% {
+        transform: translateY(-1.25rem);
+    }
+
+    50% {
+        transform: translateY(0rem);
+    }
+
+    100% {
+        transform: translateY(-1.25rem);
+    }
+}
+
+.zoom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    transition: transform 3s ease-in-out;
+    transform-origin: center;
+}
+
+.astronaut-img {
+    -webkit-animation: spin 10s linear infinite;
+    -moz-animation: spin 10s linear infinite;
+    animation: spin 10s linear infinite;
+    transition: transform 0.5s ease, transform 3s ease-in-out;
+}
+
+.astronaut-img.no-spin {
+    animation: none;
+}
+
+.astronaut-text.no-spin-text {
+    animation: none;
+}
+
+@-moz-keyframes spin {
+    100% {
+        -moz-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+.astronaut-choice {
+    animation: astronaut-spin 4s linear infinite;
+    transform-origin: center;
+}
+
+@keyframes astronaut-spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
